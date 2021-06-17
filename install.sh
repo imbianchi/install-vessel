@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-bash ./docker-config.sh
-bash ./docker-compose-config.sh
+# bash ./docker-config.sh
+# bash ./docker-compose-config.ssh
 
-sudo bash -c "apt update -y"
-sudo bash -c "apt install git -y"
+sudo apt install git -y
 
 bash ./ssh-config.sh
