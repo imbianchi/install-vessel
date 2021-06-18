@@ -3,7 +3,8 @@
 if [[ -d "$HOME/vessel" ]]
     then
         echo "vessel directory already exist..."
-        sudo rm -r ~/vessel/*
+        sudo rm -rf ~/vessel/*
+        sudo rm -rf ~/vessel/.*
     else
         sudo mkdir ~/vessel
 fi
@@ -21,3 +22,4 @@ fi
 
 sudo chown -R $USER:$USER ~/.bash_aliases
 sudo echo "alias vessel='$HOME/vessel/vessel.sh'" >> ~/.bash_aliases
+bash "$HOME/vessel/vessel.sh"

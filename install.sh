@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 USER=$(whoami)
-RED='\033[0;31m'
-NC='\033[0m'
-ALERT='\033[1;33m'
+red='\033[0;31m'
+nc='\033[0m'
+yellow='\033[1;33m'
 
 export USER
-export RED
-export NC
-export ALERT
+export red
+export nc
+export yellow
 
 # bash ./docker-config.sh
 # bash ./docker-compose-config.ssh
@@ -17,3 +17,7 @@ export ALERT
 sudo apt install git -y
 
 bash ./vessel-config.sh
+
+exec bash
+
+exit 0
