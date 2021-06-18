@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-if [[ -d "/home/$USER/bis2bis" ]]
+if [[ -d "$HOME/vessel" ]]
     then
-        echo "bis2bis directory already exist..."
-        sudo rm -r ~/bis2bis/vessel
+        echo "vessel directory already exist..."
+        sudo rm -r ~/vessel/*
     else
-        sudo mkdir ~/bis2bis
+        sudo mkdir ~/vessel
 fi
 
-sudo chown -R $USER:$USER ~/bis2bis
-git clone git@gitlab.com:bis2bis-dev-tools/vessel.git /home/$USER/bis2bis/vessel
+sudo chown -R $USER:$USER ~/vessel
+git clone git@gitlab.com:bis2bis-dev-tools/vessel.git $HOME/vessel
 
-if [[ -f "/home/$USER/.bash_aliases" ]]
+if [[ -f "$HOME/.bash_aliases" ]]
     then
         echo "Writing vessel bash alias..."
     else
@@ -20,4 +20,4 @@ if [[ -f "/home/$USER/.bash_aliases" ]]
 fi
 
 sudo chown -R $USER:$USER ~/.bash_aliases
-sudo echo "alias vessel='/home/$USER/bis2bis/vessel/vessel.sh'" >> ~/.bash_aliases
+sudo echo "alias vessel='$HOME/vessel/vessel.sh'" >> ~/.bash_aliases
