@@ -21,5 +21,5 @@ if [[ -f "$HOME/.bash_aliases" ]]
 fi
 
 sudo chown -R $USER:$USER ~/.bash_aliases
-sudo echo "alias vessel='$HOME/vessel/vessel.sh'" >> ~/.bash_aliases
+echo "alias vessel='$HOME/vessel/vessel.sh'" >> ~/.bash_aliases
 bash "$HOME/vessel/vessel.sh"

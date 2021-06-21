@@ -10,9 +10,9 @@ export red
 export nc
 export yellow
 
-# bash ./docker-config.sh
-# bash ./docker-compose-config.ssh
-# bash ./ssh-config.sh
+bash ./docker-config.sh
+bash ./docker-compose-config.sh
+bash ./ssh-config.sh
 
 sudo apt install git -y
 
