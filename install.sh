@@ -13,7 +13,7 @@ export yellow
 bash ./docker-config.sh
 bash ./ssh-config.sh
 
-apt install git -y
+sudo apt install git -y
 
 bash ./vessel-config.sh
 

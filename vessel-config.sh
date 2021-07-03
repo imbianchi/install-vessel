@@ -1,25 +1,34 @@
 #!/usr/bin/env bash
 
+# verify if vessel drectory already exists
 if [[ -d "$HOME/vessel" ]]
     then
-        echo "vessel directory already exist..."
-        rm -rf ~/vessel/*
-        rm -rf ~/vessel/.*
+        echo "vessel directory already exists..."
+        # delete everything inside
+        sudo rm -rf ~/vessel/*
+        sudo rm -rf ~/vessel/.*
     else
-        mkdir ~/vessel
+        sudo mkdir ~/vessel
 fi
 
-chown -R $USER:$USER ~/vessel
+# set directory permission to user
+sudo chown -R $USER:$USER ~/vessel
+
+# clone vessel repository
 git clone git@gitlab.com:bis2bis-dev-tools/vessel.git $HOME/vessel
 
+# verify if bash configuration aliases file already exists
 if [[ -f "$HOME/.bash_aliases" ]]
     then
         echo "Writing vessel bash alias..."
     else
         echo "Creating and registering bash alias..."
-        touch ~/.bash_aliases
+        sudo touch ~/.bash_aliases
 fi
 
-chown -R $USER:$USER ~/.bash_aliases
+# give writing permission to user and insert vessel alias
+sudo chown -R $USER:$USER ~/.bash_aliases
 echo "alias vessel='$HOME/vessel/vessel.sh'" >> ~/.bash_aliases
+
+# run vessel
 bash "$HOME/vessel/vessel.sh"
