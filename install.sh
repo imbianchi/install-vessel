@@ -11,10 +11,9 @@ export nc
 export yellow
 
 bash ./docker-config.sh
-bash ./docker-compose-config.sh
 bash ./ssh-config.sh
 
-sudo apt install git -y
+apt install git -y
 
 bash ./vessel-config.sh
 

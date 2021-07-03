@@ -2,7 +2,7 @@
 
 echo "Configuring ssh conn gitlab..."
 
-sudo ssh-keygen -t rsa -b 4096 -C "" -P "" -f "$HOME/.ssh/id_rsa_b2b" -q
+ssh-keygen -t rsa -b 4096 -C "" -P "" -f "/root/.ssh/id_rsa_b2b" -q
 
 echo -e "${red}Adicione o código em amarelo abaixo no SSH do seu gitlab:${nc}"
 sshpub="$(sudo cat ~/.ssh/id_rsa_b2b.pub)"
